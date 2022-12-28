@@ -13,7 +13,7 @@
     <a href="/news/create">Create new</a>
     <ul>
     @foreach ($list as $news)
-        <li>{{ $news->title }} - {{$news->status}}</li>
+        <li>{{ $news->title }} - {{$news->category->name}}</li>
     @endforeach
     </ul>
 </body>

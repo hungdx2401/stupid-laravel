@@ -18,6 +18,9 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('content');
             $table->integer('status');
+            $table->unsignedBigInteger('category_id');
+            // trường category_id là khóa ngoại liên quan đến trường id từ bảng categories.
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

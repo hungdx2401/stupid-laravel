@@ -37,6 +37,18 @@
             </div>
             <div class="row">
                 <div class="col-25">
+                    <label for="category">Category</label>
+                </div>
+                <div class="col-75">
+                    <select name="category_id" id="category_id">
+                        @foreach ($categories as $cate)
+                            <option value="{{ $cate->id }}">{{ $cate->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
                     <label for="status">Status</label>
                 </div>
                 <div class="col-75">
