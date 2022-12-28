@@ -1,17 +1,20 @@
 @extends('admin.layout')
 
 @section('css')
-    <style>
-        body {
-            font-size: 40px;
-        }
-    </style>
 @endsection
 
 @section('content')
     <h2>Responsive Form</h2>
     <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li style="color: red">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
         <form action="/news/create" method="POST">
             @csrf()
